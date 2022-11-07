@@ -16,8 +16,21 @@ const todoReducer = createSlice({
         return item.id !== action.payload;
       });
     },
+    // Update Todo
+    updateTodo: (state, action) => {
+      return state.map((todo) => {
+        const item = todo.item;
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            [item]: action.payload.text,
+          };
+        }
+        return todo;
+      });
+    },
   },
 });
 
-export const { addTodo, deleteTodo } = todoReducer.actions;
+export const { addTodo, deleteTodo, updateTodo } = todoReducer.actions;
 export const reducer = todoReducer.reducer;
