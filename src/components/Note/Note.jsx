@@ -5,12 +5,8 @@ function Notes({ text }) {
         <p>{text}</p>
       </div>
       <div className='icons'>
-        <img
-          style={{ marginRight: '1rem' }}
-          src='./update-note.svg'
-          alt='update'
-        />
-        <img src='./trash-solid.svg' alt='delete' />
+        <img style={{ marginRight: '1rem' }} src='./update.svg' alt='update' />
+        <img src='./delete.svg' alt='delete' />
       </div>
     </div>
   );

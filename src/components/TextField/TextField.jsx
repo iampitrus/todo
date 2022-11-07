@@ -10,7 +10,7 @@ function TextField() {
         placeholder='Start writing Task'
         value={text}
       />
-      <img src='./circle-plus-solid.svg' alt='add' />
+      <img src='./add.svg' alt='add' />
     </div>
   );
 }

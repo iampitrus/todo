@@ -1,3 +1,7 @@
+:root {
+  --primary: #dea07e;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -32,7 +36,7 @@ input {
 
 .textField {
   position: relative;
-  width: 50%;
+  width: max(55%, 10rem);
 }
 .textField > img {
   width: 25px;
@@ -50,8 +54,8 @@ input {
 }
 
 .notes {
-  background-color: var(--secondary);
-  width: 60%;
+  background-color: #f4f4f4;
+  width: max(60%, 12rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,6 +80,7 @@ button {
   border: none;
   text-align: center;
   box-shadow: 0 0 5px hsl(0 0% 0%/0.5);
+  margin-top: 2rem;
 }
 
 button:hover {

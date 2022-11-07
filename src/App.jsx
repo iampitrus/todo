@@ -16,10 +16,10 @@ function App() {
         {list.map((item) => (
           <Note text={item.text} key={item.id} />
         ))}
+        <button onClick={() => setShowInput(!showInput)}>
+          {showInput ? 'Done' : 'New List'}
+        </button>
       </div>
-      <button onClick={() => setShowInput(!showInput)}>
-        {showInput ? 'Done' : 'New List'}
-      </button>
     </div>
   );
 }
