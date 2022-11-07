@@ -6,6 +6,9 @@ function App() {
   return (
     <div className='App'>
       <header>Todo List</header>
+      <h1 className='title'>
+        Add, <span>Delete,</span> Update your Todo List
+      </h1>
       <div className='notes_container'>
         {showInput && <TextField />}
         <ShowTodo />

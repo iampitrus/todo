@@ -2,18 +2,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../redux/reducer';
 
-// const mapStateToProps = (state) => {
-//   return {
-//     todos: state,
-//   };
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     addTodo: (obj) => dispatch(addTodo(obj)),
-//   };
-// };
-
 function TextField() {
   const dispatch = useDispatch();
   const [text, setText] = useState('');
