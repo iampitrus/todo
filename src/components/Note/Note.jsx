@@ -1,9 +1,8 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../../redux/reducer';
 
 function Notes({ text, id }) {
-  const [done, setDone] = useState(false);
   const dispatch = useDispatch();
   const inputRef = useRef(true);
 
@@ -24,7 +23,7 @@ function Notes({ text, id }) {
 
   return (
     <div className='notes'>
-      <div style={{ cursor: 'pointer' }} onClick={() => setDone(!done)}>
+      <div style={{ cursor: 'pointer' }}>
         <textarea
           ref={inputRef}
           disabled={inputRef}
