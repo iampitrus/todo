@@ -1,17 +1,10 @@
-function Notes() {
+function Notes({ text, children }) {
   return (
     <div className='notes'>
       <div>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p>{text}</p>
       </div>
-      <div className='icons'>
-        <img
-          style={{ marginRight: '1rem' }}
-          src='./update-note.svg'
-          alt='update'
-        />
-        <img src='./trash-solid.svg' alt='delete' />
-      </div>
+      <div className='icons'>{children}</div>
     </div>
   );
 }

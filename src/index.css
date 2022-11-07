@@ -80,9 +80,7 @@ button {
   padding: 0.5rem 1.5rem;
   border-radius: 5px;
   border: none;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
+  text-align: center;
   box-shadow: 0 0 5px hsl(0 0% 0%/0.5);
 }
 
