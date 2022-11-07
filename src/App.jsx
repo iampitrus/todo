@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { Header, Note } from './components';
-import { useSelector } from 'react-redux';
-import TextField from './components/TextField/TextField';
-import Delete from './features/Delete';
-import Update from './features/Update';
+// import { Counter } from './features/counter/Counter';
 
 function App() {
-  const list = useSelector((state) => state.todo.list);
   const [showInput, setShowInput] = useState(false);
   return (
     <div className='App'>
       <Header />
       <div className='notes_container'>
-        {showInput && <TextField />}
-        {list.map((each) => (
-          <Note text={each.text} key={each.id} id={each.id}>
-            <Update id={each.id} />
-            <Delete id={each.id} />
-          </Note>
-        ))}
+        {showInput && (
+          <div className='textField'>
+            <input type='text' placeholder='Start writing Task' />
+            <img src='./circle-plus-solid.svg' alt='add' />
+          </div>
+        )}
+        <Note />
+        <Note />
+        <Note />
+        <Note />
       </div>
       <button onClick={() => setShowInput(!showInput)}>
         {showInput ? 'Done' : 'New List'}

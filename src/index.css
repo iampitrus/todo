@@ -1,9 +1,3 @@
-:root {
-  --primary: #dea07e;
-  --secondary: #f4f4f4;
-  --accent: #d9d9d9;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
