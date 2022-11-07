@@ -1,31 +1,44 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteTodo } from '../../redux/reducer';
+import { deleteTodo, updateTodo } from '../../redux/reducer';
 
 function Notes({ text, id }) {
   const [done, setDone] = useState(false);
   const dispatch = useDispatch();
+  const inputRef = useRef(true);
 
   const deleteItem = () => {
     dispatch(deleteTodo(id));
     // console.log(id);
   };
 
+  const changeFocus = () => {
+    inputRef.current.disabled = false;
+    inputRef.current.focus();
+  };
+
+  const update = () => {
+    updateTodo({ id, text: inputRef.current.value });
+    inputRef.current.disabled = true;
+  };
+
   return (
     <div className='notes'>
       <div style={{ cursor: 'pointer' }} onClick={() => setDone(!done)}>
-        <p
-          style={
-            done
-              ? { textDecoration: 'line-through' }
-              : { textDecoration: 'none' }
-          }
-        >
-          {text}
-        </p>
+        <textarea
+          ref={inputRef}
+          disabled={inputRef}
+          defaultValue={text}
+          onMouseOut={() => update()}
+        />
       </div>
       <div className='icons'>
-        <img style={{ marginRight: '1rem' }} src='./update.svg' alt='update' />
+        <img
+          onClick={() => changeFocus()}
+          style={{ marginRight: '1rem' }}
+          src='./update.svg'
+          alt='update'
+        />
         <img onClick={() => deleteItem()} src='./delete.svg' alt='delete' />
       </div>
     </div>
