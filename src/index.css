@@ -69,6 +69,7 @@ input {
 
 .notes img {
   width: 15px;
+  cursor: pointer;
 }
 
 button {
