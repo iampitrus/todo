@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import Add from '../../features/Add';
 function TextField() {
   const [text, setText] = useState(null);
   return (
@@ -9,9 +8,9 @@ function TextField() {
         onChange={(e) => setText(e.target.value)}
         type='text'
         placeholder='Start writing Task'
+        value={text}
       />
-      <Add text={text} />
-      <h1>maserati</h1>
+      <img src='./circle-plus-solid.svg' alt='add' />
     </div>
   );
 }

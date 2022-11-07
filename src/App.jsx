@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
-import { Header, Note } from './components';
-// import { Counter } from './features/counter/Counter';
+import { TextField, Note } from './components';
 
 function App() {
+  const list = [
+    { id: 0, text: 'lorem ipusm is the main deal' },
+    { id: 1, text: 'lorem ipusm is the main deal' },
+    { id: 2, text: 'lorem ipusm is the main deal' },
+  ];
   const [showInput, setShowInput] = useState(false);
   return (
     <div className='App'>
-      <Header />
+      <header>Todo List</header>
       <div className='notes_container'>
-        {showInput && (
-          <div className='textField'>
-            <input type='text' placeholder='Start writing Task' />
-            <img src='./circle-plus-solid.svg' alt='add' />
-          </div>
-        )}
-        <Note />
-        <Note />
-        <Note />
-        <Note />
+        {showInput && <TextField />}
+        {list.map((item) => (
+          <Note text={item.text} key={item.id} />
+        ))}
       </div>
       <button onClick={() => setShowInput(!showInput)}>
         {showInput ? 'Done' : 'New List'}
